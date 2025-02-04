@@ -68,7 +68,42 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             <ul className={kcClsx("kcFormSocialAccountListClass", social.providers.length > 3 && "kcFormSocialAccountListGridClass")}>
                                 {social.providers.map((...[p, , providers]) => (
                                     <li key={p.alias}>
-                                        <a
+
+                                        <Button
+                                            id={`social-${p.alias}`}
+                                            href={p.loginUrl}
+                                            variant="contained"
+                                            fullWidth
+                                            sx={{
+                                                width: '100%',
+                                                marginBottom: '10px',
+                                                padding: '12px 24px',
+                                                textTransform: 'none',
+                                                backgroundColor: '#a0a3a9', // Custom background color
+                                                '&:hover': {
+                                                    backgroundColor: '#7c7e80', // Custom hover color
+                                                },
+                                                borderRadius: '4px',
+                                                boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                                                fontSize: '16px',
+                                                fontWeight: 500
+                                            }}
+                                            startIcon={
+                                                p.iconClasses && (
+                                                    <i 
+                                                        className={clsx(kcClsx("kcCommonLogoIdP"), p.iconClasses)} 
+                                                        aria-hidden="true"
+                                                    />
+                                                )
+                                            }
+                                        >
+                                            <span
+                                                dangerouslySetInnerHTML={{ 
+                                                    __html: kcSanitize(p.displayName) 
+                                                }}
+                                            />
+                                        </Button>
+                                        {/* <a
                                             id={`social-${p.alias}`}
                                             className={kcClsx(
                                                 "kcFormSocialAccountListButtonClass",
@@ -82,7 +117,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 className={clsx(kcClsx("kcFormSocialAccountNameClass"), p.iconClasses && "kc-social-icon-text")}
                                                 dangerouslySetInnerHTML={{ __html: kcSanitize(p.displayName) }}
                                             ></span>
-                                        </a>
+                                        </a> */}
                                     </li>
                                 ))}
                             </ul>
