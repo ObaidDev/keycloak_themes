@@ -9,6 +9,7 @@ import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
 
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
@@ -79,14 +80,23 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 marginBottom: '10px',
                                                 padding: '12px 24px',
                                                 textTransform: 'none',
-                                                backgroundColor: '#a0a3a9', // Custom background color
+                                                color: 'white',
+                                                backgroundColor: 'black', // Custom background color
                                                 '&:hover': {
-                                                    backgroundColor: '#7c7e80', // Custom hover color
+                                                    backgroundColor: '#333333', // Custom hover color
                                                 },
                                                 borderRadius: '4px',
                                                 boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
                                                 fontSize: '16px',
-                                                fontWeight: 500
+                                                fontWeight: 500 ,
+
+                                                '& span': {
+                                                    color: 'white'
+                                                },
+                                                // And the icon if needed
+                                                '& i': {
+                                                    color: 'white'
+                                                }
                                             }}
                                             startIcon={
                                                 p.iconClasses && (
@@ -149,11 +159,30 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     </label> */}
                                     
                                     <TextField
-                                        sx={{
-                                            width: '100%' 
-                                        }}
-                                        id="outlined-basic" 
                                         label={getLabelUsernameOrEmail()}
+                                        slotProps={{
+                                            inputLabel: {
+                                                sx: {
+                                                    '&.Mui-focused': {
+                                                        color: 'black', // Label color when focused
+                                                    },
+                                                },
+                                            },
+                                        }}
+                                        sx={{
+                                            width: '100%' ,
+                                            '& .MuiOutlinedInput-root': {
+                                            '& fieldset': {
+                                                borderColor: 'gray', // Default border color
+                                            },
+                                            '&:hover fieldset': {
+                                                borderColor: 'black', // Border color on hover
+                                            },
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: 'black', // Border color when focused
+                                            }}
+                                        }}
+                                        id="outlined-basic"
                                         variant="outlined"
                                         name="username"
                                         defaultValue={login.username ?? ""}
@@ -211,13 +240,33 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 )} */}
 
                                 <TextField
-                                    sx={{ width: '100%' }}
-                                    id="password"
                                     label={msg("password")}
+                                    slotProps={{
+                                        inputLabel: {
+                                            sx: {
+                                                '&.Mui-focused': {
+                                                    color: 'black', // Label color when focused
+                                                },
+                                            },
+                                        },
+                                    }}
+                                    sx={{ 
+                                        width: '100%' ,
+                                        '& .MuiOutlinedInput-root': {
+                                        '& fieldset': {
+                                            borderColor: 'gray', // Default border color
+                                        },
+                                        '&:hover fieldset': {
+                                            borderColor: 'black', // Border color on hover
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'black', // Border color when focused
+                                        }}  
+                                     }}
+                                    id="password"
                                     name="password"
                                     type="password"
                                     variant="outlined"
-                                    tabIndex={3}
                                     autoComplete="current-password"
                                     error={usernameHidden && messagesPerField.existsError("username", "password")}
                                     helperText={
@@ -247,11 +296,27 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 </div>
                                 <div className={kcClsx("kcFormOptionsWrapperClass")}>
                                     {realm.resetPasswordAllowed && (
-                                        <span>
-                                            <a tabIndex={6} href={url.loginResetCredentialsUrl}>
-                                                {msg("doForgotPassword")}
-                                            </a>
-                                        </span>
+
+                                    <Link 
+                                        href={url.loginResetCredentialsUrl}
+                                        sx={{
+                                            color: 'black', // Set the text color
+                                            textDecoration: 'none', // Remove the underline
+                                            '&:hover': {
+                                              color: 'black',
+                                              textDecoration: 'underline', // Underline on hover
+                                              textDecorationColor: 'black', // Underline color on hover
+                                            },
+                                        }}
+                                    >
+                                        {msg("doForgotPassword")}
+                                    </Link>
+
+                                        // <span>
+                                        //     <a tabIndex={6} href={url.loginResetCredentialsUrl}>
+                                        //         {msg("doForgotPassword")}
+                                        //     </a>
+                                        // </span>
                                     )}
                                 </div>
                             </div>
@@ -261,14 +326,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 
                                 <Button
                                     sx={{
-                                        backgroundColor: '#your-custom-color',
+                                        backgroundColor: 'black',
                                         '&:hover': {
-                                            backgroundColor: '#your-hover-color'
+                                            backgroundColor: '#333333'
                                         } ,
                                         width: '100%' 
                                     }}
                                     variant="contained" 
-                                    color="success"
                                     disabled={isLoginButtonDisabled}
                                     name="login"
                                     type="submit"
