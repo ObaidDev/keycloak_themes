@@ -38,3 +38,17 @@ body.kcBodyClass {
 .kcInfoAreaWrapperClass{
     border-radius: 16px;
 }
+
+.kcAlertClass{
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    background: #FCE8DB;
+    border-radius: 8px;
+    border: 1px solid #EF665B;
+    box-shadow: 0px 0px 5px -3px #111;
+}

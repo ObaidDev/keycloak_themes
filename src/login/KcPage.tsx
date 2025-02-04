@@ -10,6 +10,7 @@ const UserProfileFormFields = lazy(
 
 import "./main.css";
 const Login = lazy(() => import("./pages/Login"));
+const LoginUsername = lazy(() => import("./pages/LoginUsername"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -26,6 +27,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
                     case "login.ftl": return (
                         <Login
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
+
+                    case "login-username.ftl": return (
+                        <LoginUsername
                             {...{ kcContext, i18n, classes }}
                             Template={Template}
                             doUseDefaultCss={true}
