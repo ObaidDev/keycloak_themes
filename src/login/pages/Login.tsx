@@ -48,18 +48,18 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             displayMessage={!messagesPerField.existsError("username", "password")}
             headerNode={msg("loginAccountTitle")}
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
-            infoNode={
-                <div id="kc-registration-container">
-                    <div id="kc-registration">
-                        <span>
-                            {msg("noAccount")}{" "}
-                            <a tabIndex={8} href={url.registrationUrl}>
-                                {msg("doRegister")}
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            }
+            // infoNode={
+            //     <div id="kc-registration-container">
+            //         <div id="kc-registration">
+            //             <span>
+            //                 {msg("noAccount")}{" "}
+            //                 <a tabIndex={8} href={url.registrationUrl}>
+            //                     {msg("doRegister")}
+            //                 </a>
+            //             </span>
+            //         </div>
+            //     </div>
+            // }
             socialProvidersNode={
                 <>
                     {realm.password && social?.providers !== undefined && social.providers.length !== 0 && (
