@@ -1,14 +1,16 @@
 body.kcBodyClass {
-    background-image: url('./assets/background_1.jpg');
+    /* background-image: url('./assets/background_1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+    position: relative; */
+    background: none;
+    
 }
 
 /* Add dark overlay */
 body.kcBodyClass::before {
-    content: '';
+    /* content: '';
     position: fixed;
     top: 0;
     left: 0;
@@ -16,17 +18,30 @@ body.kcBodyClass::before {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     background-size: cover ;
-    z-index: -1;
+    z-index: -1; */
+}
+
+
+.kcLoginClass{
+    background: none;
+    display: flex;
+    height: 100vh; 
+    margin: 0;
+    align-items: center;
 }
 
 
 .kcHeaderWrapperClass {
-    background-image: url('./assets/logo.svg');
-    background-repeat: no-repeat;
+    /* background-image: url('./assets/background_1.jpg'); */
+    /* background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
-    height: 100px; /* Adjust height as needed */
-    width: 100%;
+    background-position: center; */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    border: solid black; */
+
+    /* height: 50px;  */
+    /* width: 100%; */
 }
 
 
@@ -38,13 +53,21 @@ body.kcBodyClass::before {
 
 .kcFormCardClass{
 
-    background-color: #EEEEEE;
-    border: none;
+    /* background-color: #EEEEEE; */
+    background: white;
+    box-shadow: none;
+
+    border: none ;
     border-radius: 16px;
+
+
+    flex: 1 ;
 
 }
 
 .kcInfoAreaWrapperClass{
+    background: white !important;
+    box-shadow: none;
     border-radius: 16px;
 }
 
@@ -61,3 +84,29 @@ body.kcBodyClass::before {
     border: 1px solid #EF665B;
     box-shadow: 0px 0px 5px -3px #111;
 }
+
+
+
+
+.kcHeaderClass {
+    display: flex;
+    flex: 1; /* Takes up 50% of the width */
+    background-color: #f0f0f0;
+
+    background-image: url('./assets/background_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border: solid black; */
+
+    min-height: 100vh;
+
+    margin-bottom: none !important;
+
+    
+}
+
+
+.kcSignUpClass{
+    margin: 0 !important;
+}
+
