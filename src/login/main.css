@@ -9,12 +9,13 @@ body.kcBodyClass {
 /* Add dark overlay */
 body.kcBodyClass::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    background-size: cover ;
     z-index: -1;
 }
 
@@ -37,7 +38,7 @@ body.kcBodyClass::before {
 
 .kcFormCardClass{
 
-    background-color: whitesmoke;
+    background-color: #EEEEEE;
     border: none;
     border-radius: 16px;
 
