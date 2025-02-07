@@ -5,6 +5,11 @@ body.kcBodyClass {
     background-repeat: no-repeat;
     position: relative; */
     background: none;
+    /* height: 100vh; */
+
+    max-height: 100vh;
+
+    overflow: hidden;
     
 }
 
@@ -110,3 +115,18 @@ body.kcBodyClass::before {
     margin: 0 !important;
 }
 
+
+/* .kcLocaleListClass {
+    display: none;
+} */
+
+@media (min-width: 768px) {
+    .login-pf-page .login-pf-page-header {
+      margin-bottom: 0 !important;
+    }
+}
+
+
+.login-pf-page {
+    padding-top: 0 !important;
+}
