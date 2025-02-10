@@ -7,9 +7,9 @@ body.kcBodyClass {
     background: none;
     /* height: 100vh; */
 
-    max-height: 100vh;
+    /* max-height: 100vh;
 
-    overflow: hidden;
+    overflow: hidden; */
     
 }
 
@@ -98,7 +98,7 @@ body.kcBodyClass::before {
     flex: 1; /* Takes up 50% of the width */
     background-color: #f0f0f0;
 
-    background-image: url('./assets/background_1.jpg');
+    background-image: url('./assets/background_1.webp');
     background-size: cover;
     background-repeat: no-repeat;
     /* border: solid black; */
