@@ -5,56 +5,12 @@ body.kcBodyClass {
 
 
 
-.kcHeaderWrapperClass span {
-    display: none;
-}
 
 
-
-/* .kcLoginClass{
-    background: none;
-    display: flex;
-    height: 100vh; 
-    margin: 0;
-    align-items: center;
-}
-
-
-.kcFormCardClass{
-
-    background: white;
-    box-shadow: none;
-
-    border: none ;
-    border-radius: 16px;
-
-
-    flex: 1 ;
-
-}
-
-.kcHeaderClass {
-    display: flex;
-    flex: 0.6;
-    background-color: #f0f0f0;
-
-    background-image: url('./assets/background_1.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    min-height: 100vh;
-
-    margin-bottom: none !important;
-
-    
-} */
-
-
-/* Default styles - will apply to mobile first */
 .kcLoginClass {
     background: none;
     display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
     align-items: center;
@@ -68,39 +24,52 @@ body.kcBodyClass {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    /* margin: 20px; */
 }
 
 .kcHeaderClass {
-    display: none; /* Hide the background section on mobile */
+    display: none;
 }
+
 
 /* Laptop and desktop screens */
 @media screen and (min-width: 1024px) {
     .kcLoginClass {
-        flex-direction: row; /* Change to horizontal layout */
+        flex-direction: row;
         height: 100vh;
     }
 
     .kcFormCardClass {
-        flex: 1;
-        /* margin: 40px; */
+
         max-width: 500px;
     }
 
-    .kcHeaderClass {
-        display: flex;
-        flex: 0.6;
-        background-color: #f0f0f0;
-        background-image: url('./assets/background_1.webp');
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 8px;
+    }
+        
+    .div1 {
+        grid-column: span 3 / span 3;
+        grid-row: span 5 / span 5;
+    
+        background-image: url('./assets/background_1_origin.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        min-height: 100vh;
-        margin-bottom: 0 !important;
+    
     }
+    
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 5 / span 5;
+        grid-column-start: 4;
+    }
+
+    
 }
 
-/* Optional: Medium-sized screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .kcFormCardClass {
         width: 80%;
@@ -127,26 +96,4 @@ body.kcBodyClass {
     border-radius: 8px;
     border: 1px solid #EF665B;
     box-shadow: 0px 0px 5px -3px #111;
-}
-
-
-
-
-
-
-.kcSignUpClass{
-    margin: 0 !important;
-}
-
-
-
-@media (min-width: 768px) {
-    .login-pf-page .login-pf-page-header {
-      margin-bottom: 0 !important;
-    }
-}
-
-
-.login-pf-page {
-    padding-top: 0 !important;
 }
