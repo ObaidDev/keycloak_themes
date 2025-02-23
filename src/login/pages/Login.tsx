@@ -43,10 +43,11 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 
         <div className="parent">
             <div className="div1">
+                <h1>Hello Wolrd</h1>
             </div>
 
             <div className="div2">
-                
+
                 <Template
                     kcContext={kcContext}
                     i18n={i18n}

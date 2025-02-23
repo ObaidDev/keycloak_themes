@@ -97,3 +97,8 @@ body.kcBodyClass {
     border: 1px solid #EF665B;
     box-shadow: 0px 0px 5px -3px #111;
 }
+
+
+.h1, .h2, h1, h2 {
+    font-weight: 800;
+}
